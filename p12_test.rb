@@ -36,6 +36,10 @@ class P12Test < Minitest::Test
     assert_equal ["ROFL", "QNEK", "PMDJ", "OLCI"], P12.create_permutations("ROFL", 3)
   end
 
+  def test_run_decryption
+    assert_equal true, P12.create_permutations("FRZDUGV",26)
+  end
+
 =begin
   def test_cypher_parsed_26_ways
     assert_equal 26, P12.get_caesar_options(@test_cyper).count
