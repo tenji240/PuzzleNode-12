@@ -37,6 +37,7 @@ class P12
     return new_word.join
   end
 
+  #Final test - Not Implemented Yet..
   def self.get_caesar_options(cypher)
 
   end
