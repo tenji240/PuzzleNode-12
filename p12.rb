@@ -1,6 +1,14 @@
 class P12
   #Base Alphabet used for Decryption
+
   ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  DICTIONARY = []
+  File.open("en.txt") do |file|
+    file.each do |line|
+      words << line.strip
+    end
+  end
+  
 
   #Performs the Rotation of an array by the shift amount
   def self.rotate(example_array, num = 1)
@@ -35,6 +43,17 @@ class P12
     end
 
     return new_word.join
+  end
+
+  def self.create_permutations(encrypted_word, number_of_cypher_alphabets=0)
+    permutations = []
+    (0..number_of_cypher_alphabets).each do |x|
+      cypher_alphabet = self.get_alphabet(x)
+      permutations << self.decrypt_word(encrypted_word, cypher_alphabet)
+    end
+
+    puts permutations.inspect
+    return permutations
   end
 
   #Final test - Not Implemented Yet..
