@@ -25,12 +25,20 @@ class P12Test < Minitest::Test
     assert_equal P12.get_alphabet(5), "FGHIJKLMNOPQRSTUVWXYZABCDE"
   end
 
-  def test_decrypt_word_with_basic_alphabet
-    assert_equal P12.decrypt_word("CD", "BCDEFGHIJKLMNOPQRSTUVWXYZA"), "BC"
+  #can take a word and generate the conversion
+  def test_decrypt_word_with_standard_alphabet
+    assert_equal P12.decrypt_word("BC", "BCDEFGHIJKLMNOPQRSTUVWXYZA"), "AB"
+    assert_equal P12.decrypt_word("URIO", "DEFGHIJKLMNOPQRSTUVWXYZABC"), "ROFL"
   end
 
+  def test_get_multiple_decryptions_from_shift_amount
+    assert_equal P12.create_permutations, ["AB","BC","CD","DE","EF"]
+  end
+
+=begin
   def test_cypher_parsed_26_ways
     assert_equal 26, P12.get_caesar_options(@test_cyper).count
   end
+=end
 
 end
