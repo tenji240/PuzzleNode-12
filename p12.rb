@@ -37,6 +37,16 @@ class P12
     return new_word.join
   end
 
+  def self.create_permutations(encrypted_word, number_of_cypher_alphabets=0)
+    permutations = []
+    (0..number_of_cypher_alphabets).each do |x|
+      cypher_alphabet = self.get_alphabet(x)
+      permutations << self.decrypt_word(encrypted_word, cypher_alphabet)
+    end
+
+    return permutations
+  end
+
   #Final test - Not Implemented Yet..
   def self.get_caesar_options(cypher)
 

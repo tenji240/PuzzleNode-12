@@ -32,7 +32,8 @@ class P12Test < Minitest::Test
   end
 
   def test_get_multiple_decryptions_from_shift_amount
-    assert_equal P12.create_permutations, ["AB","BC","CD","DE","EF"]
+    assert_equal ["BC","AB","ZA","YZ", "XY"], P12.create_permutations("BC", 4)
+    assert_equal ["ROFL", "QNEK", "PMDJ", "OLCI"], P12.create_permutations("ROFL", 3)
   end
 
 =begin
