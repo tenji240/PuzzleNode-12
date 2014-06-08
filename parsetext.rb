@@ -4,4 +4,4 @@ File.open("text.txt") do |file|
     text << line.split(%r{[\W]+})
   end
 end
-puts text.flatten.inspect
+puts text.flatten.join(" ")
