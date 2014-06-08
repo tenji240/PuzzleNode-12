@@ -5,7 +5,7 @@ class P12
   DICTIONARY = []
   File.open("en.txt") do |file|
     file.each do |line|
-      words << line.strip
+      DICTIONARY << line.strip
     end
   end
   
@@ -52,7 +52,7 @@ class P12
       permutations << self.decrypt_word(encrypted_word, cypher_alphabet)
     end
 
-    puts permutations.inspect
+    #puts permutations.inspect
     return permutations
   end
 
