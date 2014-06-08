@@ -4,5 +4,5 @@ File.open("en.txt") do |file|
     words << line.strip
   end
 end
-puts words.include?("magic")
+puts words.inspect
 #puts words["saldkaj"]

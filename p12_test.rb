@@ -49,7 +49,11 @@ class P12Test < Minitest::Test
   def test_cross_check_frequency_with_dictionary
     assert_equal 0, P12.check_word(["FBASGAD", "DABSADA", "ASDAASA"]).count
     assert_equal 1, P12.check_word(["COWARDS", "FASADADA", "BHAJKDA"]).count
-    assert_equal 4, P12.check_word(["COWARDS", "FALL", "YOU", "ASADA", "SEED", "DSDSAS"]).count
+  end
+
+  def test_caesar_decryption
+    assert_equal "COWARDS", P12.caesar_decryption("FRZDUGV")
+    assert_equal "COWARDS DIE MANY TIMES BEFORE THEIR DEATHS", P12.caesar_decryption("FRZDUGV GLH PDQB WLPHV EHIRUH WKHLU GHDWKV")
   end
 
 =begin

@@ -61,11 +61,32 @@ class P12
     decypted_array.each do |word|
       if DICTIONARY.include?(word)
         target_words << word
+        break
       end
     end
 
     #puts target_words.inspect
     return target_words
+  end
+
+  #for each word in the array
+    #run create_permutations - returns all possible permutaions
+    #run check_word - returns valid words
+    #append all valid words to array
+  #join array and return
+  def self.caesar_decryption(encrypted_word)
+    #break string into an array
+    decrypted_array = []
+    encrypted_array = encrypted_word.split(" ")
+
+
+    encrypted_array.each do |word|
+      permutations = self.create_permutations(word, 25)
+      target_words = self.check_word(permutations)
+      decrypted_array << target_words
+    end
+
+    return decrypted_array.flatten.join(" ")
   end
 
   #Final test - Not Implemented Yet..
