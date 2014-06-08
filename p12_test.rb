@@ -46,6 +46,12 @@ class P12Test < Minitest::Test
     assert_equal ["COWARDS"], P12.check_word(P12.create_permutations("FRZDUGV",25))
   end
 
+  def test_cross_check_frequency_with_dictionary
+    assert_equal 0, P12.check_word(["FBASGAD", "DABSADA", "ASDAASA"]).count
+    assert_equal 1, P12.check_word(["COWARDS", "FASADADA", "BHAJKDA"]).count
+    assert_equal 4, P12.check_word(["COWARDS", "FALL", "YOU", "ASADA", "SEED", "DSDSAS"]).count
+  end
+
 =begin
   def test_cypher_parsed_26_ways
     assert_equal 26, P12.get_caesar_options(@test_cyper).count
