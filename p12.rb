@@ -5,7 +5,7 @@ class P12
   DICTIONARY = []
   File.open("en.txt") do |file|
     file.each do |line|
-      DICTIONARY << line.strip
+      DICTIONARY << line.strip.upcase
     end
   end
   
@@ -54,6 +54,18 @@ class P12
 
     #puts permutations.inspect
     return permutations
+  end
+
+  def self.check_word(decypted_array)
+    target_words = []
+    decypted_array.each do |word|
+      if DICTIONARY.include?(word)
+        target_words << word
+      end
+    end
+
+    #puts target_words.inspect
+    return target_words
   end
 
   #Final test - Not Implemented Yet..
