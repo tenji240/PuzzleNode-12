@@ -52,6 +52,10 @@ class P12Test < Minitest::Test
     assert_equal 4, P12.check_word(["COWARDS", "FALL", "YOU", "ASADA", "SEED", "DSDSAS"]).count
   end
 
+  def test_caesar_decryption
+    assert_equal "COWARDS", P12.caesar_decryption("FRZDUGV")
+  end
+
 =begin
   def test_cypher_parsed_26_ways
     assert_equal 26, P12.get_caesar_options(@test_cyper).count

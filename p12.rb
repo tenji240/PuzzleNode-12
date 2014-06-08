@@ -68,6 +68,15 @@ class P12
     return target_words
   end
 
+  def caesar_decryption(encrypted_word)
+    #break string into an array
+    #for each word in the array
+      #run create_permutations - returns all possible permutaions
+      #run check_word - returns valid words
+      #append all valid words to array
+    #join array and return
+  end
+
   #Final test - Not Implemented Yet..
   def self.get_caesar_options(cypher)
 
